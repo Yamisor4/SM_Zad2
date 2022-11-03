@@ -51,6 +51,7 @@ public class TaskFragment extends Fragment {
         doneCheckBox= view.findViewById(R.id.task_done);
         nameField = view.findViewById(R.id.task_name);
         detailsTextView = view.findViewById(R.id.details_name);
+        nameField.setText(task.getName());
         nameField.addTextChangedListener(new TextWatcher(){
 
             @Override
@@ -73,7 +74,7 @@ public class TaskFragment extends Fragment {
 
         doneCheckBox.setChecked(task.isDone());
         doneCheckBox.setOnCheckedChangeListener((buttonView, isChecked) -> task.setDone(isChecked));
-        return inflater.inflate(R.layout.fragment_task,container,false);
+        return view;
 
     }
 
